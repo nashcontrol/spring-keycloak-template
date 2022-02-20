@@ -1,0 +1,17 @@
+keycloak:
+  auth-server-url: ${embedded.keycloak.auth-server-url}
+  realm: cypress-testing-realm
+  resource: cypress-test-client
+  ssl-required: external
+  public-client: true
+  principal-attribute: preferred_username
+
+server.forward-headers-strategy: FRAMEWORK
+
+logging:
+  level:
+    com.playtika.test: info
+    org.springframework.boot: info
+    org.springframework.security: info
+    org.keycloak: debug
+    root: error
