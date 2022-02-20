@@ -1,0 +1,15 @@
+embedded:
+  keycloak:
+    enabled: true
+    dockerImage: 'jboss/keycloak:16.1.1'
+    wait-timeout-in-seconds: 60
+    import-file: 'keycloak-realm.json'
+
+# values here need to relate to data provided within realm import file
+testing:
+  keycloak:
+    realm: 'cypress-testing-realm'
+    client: 'cypress-test-client'
+    client-secret: 'fa611bc9-8a29-4f3d-89f5-da4d021c556d'
+    username: 'theadmin'
+    password: '123Start!'
