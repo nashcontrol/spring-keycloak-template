@@ -10,7 +10,7 @@
         "clientAuthenticatorType": "client-secret",
         "secret": "fa611bc9-8a29-4f3d-89f5-da4d021c556d",
         "redirectUris": [
-          "http://localhost:8080/sso/login"
+          "http://localhost:8000/sso/login"
         ],
         "bearerOnly": false,
         "directAccessGrantsEnabled": true,
@@ -25,13 +25,19 @@
         "cypress-test-client": [
           {
             "id": "26f19b9f-81af-40f8-ac07-5fb8dbaeaadc",
-            "name": "role_reader",
+            "name": "Reader",
+            "clientRole": true,
+            "containerId": "1f85638f-09cd-4e56-b019-c3a39382105f"
+          },
+          {
+            "id": "84528a6f-8432-3145-ba5f-a7a4d39154fc",
+            "name": "Reader",
             "clientRole": true,
             "containerId": "1f85638f-09cd-4e56-b019-c3a39382105f"
           },
           {
             "id": "82538f6f-4a08-44b7-ba5f-a7a4d899540f",
-            "name": "role_writer",
+            "name": "Writer",
             "clientRole": true,
             "containerId": "1f85638f-09cd-4e56-b019-c3a39382105f"
           }
@@ -51,8 +57,8 @@
         ],
         "clientRoles": {
           "cypress-test-client": [
-            "role_reader",
-            "role_writer"
+            "Reader",
+            "Writer"
           ]
         }
       }

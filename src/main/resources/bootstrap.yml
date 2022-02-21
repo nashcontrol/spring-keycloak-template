@@ -11,5 +11,3 @@ testing:
     realm: 'cypress-testing-realm'
     client: 'cypress-test-client'
     client-secret: 'fa611bc9-8a29-4f3d-89f5-da4d021c556d'
-    username: 'theadmin'
-    password: '123Start!'

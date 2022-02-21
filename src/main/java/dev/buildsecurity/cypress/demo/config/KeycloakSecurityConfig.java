@@ -5,18 +5,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
 import static org.keycloak.adapters.KeycloakDeploymentBuilder.build;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
+
+import java.util.Collection;
 
 import org.keycloak.adapters.AdapterDeploymentContext;
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
@@ -28,6 +34,7 @@ import org.slf4j.LoggerFactory;
 
 
 @KeycloakConfiguration
+@EnableGlobalMethodSecurity (prePostEnabled = true)
 public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
 {
     Logger logger = LoggerFactory.getLogger(KeycloakSecurityConfig.class);
@@ -54,8 +61,8 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
             .authorizeRequests()
             .antMatchers("/api/anonymous").permitAll()
             .antMatchers("/api/**").authenticated()
-            .anyRequest()
-            .permitAll();
+            .anyRequest().denyAll().and()
+            .oauth2ResourceServer().jwt();
     }
     
 
