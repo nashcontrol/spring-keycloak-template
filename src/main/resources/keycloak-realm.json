@@ -47,12 +47,28 @@
     "users": [
       {
         "id": "e967466a-0d57-446a-969a-ade1cdad6e30",
-        "username": "test",
+        "username": "tester",
         "enabled": true,
         "credentials": [
           {
             "type": "password",
             "value": "pass"
+          }
+        ],
+        "clientRoles": {
+          "cypress-test-client": [
+            "Reader"
+          ]
+        }
+      },
+      {
+        "id": "0791fc42-f13f-4031-a352-dc80fa75961e",
+        "username": "admin",
+        "enabled": true,
+        "credentials": [
+          {
+            "type": "password",
+            "value": "complexpass"
           }
         ],
         "clientRoles": {

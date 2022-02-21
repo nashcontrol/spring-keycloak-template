@@ -8,18 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/user")
-public class UserController {
+@PreAuthorize("hasRole('Writer')")
+@RequestMapping(value = "/api/admin")
+public class AdminController {
 
-    @RequestMapping(value = "/anonymous", method = RequestMethod.GET)
-    public ResponseEntity<String> getAnonymous() {
-        return ResponseEntity.ok("Hello Anonymous user");
-    }
-
-    @PreAuthorize("hasRole('Reader')")
     @RequestMapping(value = "/me", method = RequestMethod.GET)
-    public ResponseEntity<String> getUser(Authentication authentication) {
-            return ResponseEntity.ok("Hello " + authentication.getName());
+    public ResponseEntity<String> getUser5(Authentication authentication) {
+            return ResponseEntity.ok("Hello admin, you are" + authentication.getName());
     }
     
 }
