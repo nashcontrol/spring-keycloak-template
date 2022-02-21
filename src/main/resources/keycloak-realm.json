@@ -30,12 +30,6 @@
             "containerId": "1f85638f-09cd-4e56-b019-c3a39382105f"
           },
           {
-            "id": "84528a6f-8432-3145-ba5f-a7a4d39154fc",
-            "name": "Reader",
-            "clientRole": true,
-            "containerId": "1f85638f-09cd-4e56-b019-c3a39382105f"
-          },
-          {
             "id": "82538f6f-4a08-44b7-ba5f-a7a4d899540f",
             "name": "Writer",
             "clientRole": true,
@@ -47,7 +41,7 @@
     "users": [
       {
         "id": "e967466a-0d57-446a-969a-ade1cdad6e30",
-        "username": "tester",
+        "username": "test",
         "enabled": true,
         "credentials": [
           {
