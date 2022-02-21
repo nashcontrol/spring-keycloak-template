@@ -1,4 +1,4 @@
-package dev.buildsecurity.cypress.demo.config;
+package dev.buildsecurity.spring_keycloak.demo.config;
 
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;

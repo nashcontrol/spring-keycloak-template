@@ -1,4 +1,4 @@
-package dev.buildsecurity.cypress.demo.controller;
+package dev.buildsecurity.spring_keycloak.demo.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
     @RequestMapping(value = "/me", method = RequestMethod.GET)
-    public ResponseEntity<String> getUser5(Authentication authentication) {
+    public ResponseEntity<String> getAdmin(Authentication authentication) {
             return ResponseEntity.ok("Hello admin, you are" + authentication.getName());
     }
     

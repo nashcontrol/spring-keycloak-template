@@ -1,4 +1,4 @@
-package dev.buildsecurity.cypress.demo;
+package dev.buildsecurity.spring_keycloak.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
